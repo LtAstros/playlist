@@ -57,17 +57,24 @@ var myPlayList = [
 // DOCUMENT READY FUNCTION
 $( document ).ready(function() {
 	// everything inside this function happens as soon as the page loads!
+for (var a = 0; a < myPlayList.length; a++) {
+displaySong(myPlayList[a],a);
 
-
-
+}
 });
 
 // displaySong uses the properties in the songObject to create an HTML element for a single song
 //	  and appends the element to the playlist on the page
-function displaySong(songObject){
-
-
-
+function displaySong(songObject,tempo){
+	//for (var b = 0; b < myPlayList.length; b++) {    
+    	$("body").append("<div class='card' id='card"+tempo+"'></div>");
+    	$("#card"+tempo+"").append("<div class='card-body' id='song"+tempo+"'></div>");
+    	$("#song"+tempo+"").append("<h3>" + songObject.title + "</h3>");
+    	$("#song"+tempo+"").append("<p>" + songObject.artist + "</p>");
+    	$("#song"+tempo+"").append("<img src='" + songObject.imageURL + "' class='song-image img-thumbnail float-right'>");
+    	$("#song"+tempo+"").append("<a href='" + songObject.playURL + "'>Play Now</a>");
+		//"+b+"
+	//}	
 }
 
 // displayList takes in an array of song objects, and it uses the information from each song object
