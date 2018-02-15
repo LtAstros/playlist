@@ -28,7 +28,7 @@ var mySong = {
 	"imageURL": "https://images-na.ssl-images-amazon.com/images/I/51cB3PoKceL._AC_US500_FMwebp_QL65_.jpg",
 	"playURL": "https://open.spotify.com/track/4v52HuhZqVV0eNpP6vzH5I",
 
-}
+};
 
 var myPlayList = [
 	{
@@ -50,7 +50,7 @@ var myPlayList = [
 		"playURL": "https://open.spotify.com/track/7cGfrVoC7G03XeXn7yflx5",
 	}
 
-]
+];
 
 
 
@@ -59,10 +59,24 @@ $( document ).ready(function() {
 	// everything inside this function happens as soon as the page loads!
 	clearList();
 	displayList(myPlayList);
-	$("button").click(function(){
+	$("#submit").click(function(){
 		addSong();
 		clearList();
 		displayList(myPlayList);
+	});
+	$("#clear").click(function(){
+		clearList();
+		myPlayList = [];
+		displayList(myPlayList);
+	});
+	$("body").click(function() {
+		var audio = [
+			$("#mysoundclip")[0],
+			$("#mysoundclip2")[500],
+			$("#mysoundclip3")[1000]
+			];
+    		audio[0].play();
+    		//audio.play();
 	});
 });
 
